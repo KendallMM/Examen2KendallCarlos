@@ -3,6 +3,9 @@ package com.example.examen2;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Pruebas unitarias para la clase Calculadora.
  * Se cubren los métodos: convertirNumero, realizarOperacion, convertirADestino.
@@ -56,6 +59,23 @@ public class CalculadoraTest {
         // 2 en decimal es "10" en binario
         String resultado = Calculadora.convertirADestino(2, 0);
         assertEquals("10", resultado);
+    }
+
+    // PUNTO 6: Prueba para Encuentra agregada por Carlos
+    @Test
+    public void encuentra_ElementoPresente_RetornaTrue() {
+        List<Integer> listaPrueba = Arrays.asList(1, 5, 10, 20);
+        // Verificamos si el 10 está en la lista (debería ser true)
+        boolean resultado = Calculadora.Encuentra(listaPrueba, 10);
+        assertTrue(resultado);
+    }
+
+    @Test
+    public void encuentra_ElementoAusente_RetornaFalse() {
+        List<Integer> listaPrueba = Arrays.asList(1, 5, 10, 20);
+        // Verificamos si el 99 está en la lista (debería ser false)
+        boolean resultado = Calculadora.Encuentra(listaPrueba, 99);
+        assertFalse(resultado);
     }
 }
 
