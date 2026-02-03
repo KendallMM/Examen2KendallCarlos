@@ -64,7 +64,7 @@ public class CalculadoraTest {
     // PUNTO 6: Prueba para Encuentra agregada por Carlos
     @Test
     public void encuentra_ElementoPresente_RetornaTrue() {
-        List<Integer> listaPrueba = Arrays.asList(1, 5, 10, 20);
+        List<Integer> listaPrueba = Arrays.asList(1, 5, 11, 20);
         // Verificamos si el 10 está en la lista (debería ser true)
         boolean resultado = Calculadora.Encuentra(listaPrueba, 10);
         assertTrue(resultado);
