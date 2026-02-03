@@ -9,6 +9,8 @@ import static org.junit.Assert.*;
  */
 public class CalculadoraTest {
 
+    // Casos de Prueba Kendall
+
     // Método: convertirNumero (Prueba 1: Caso Exitoso)
     @Test
     public void convertirNumero_BinarioCorrecto_RetornaDecimal() {
@@ -30,6 +32,30 @@ public class CalculadoraTest {
     public void realizarOperacion_Suma_RetornaSumaCorrecta() {
         int resultado = Calculadora.realizarOperacion(10, 20, "+");
         assertEquals(30, resultado);
+    }
+
+    // Casos de Prueba Carlos
+
+    // Método: realizarOperacion (Prueba 2: Excepción División por cero)
+    @Test(expected = ArithmeticException.class)
+    public void realizarOperacion_DivisionPorCero_LanzaExcepcion() {
+        Calculadora.realizarOperacion(5, 0, "/");
+    }
+
+    // Método: convertirADestino (Prueba 1: Decimal a Hexadecimal)
+    @Test
+    public void convertirADestino_DecimalAHex_RetornaStringCorrecto() {
+        // 15 en decimal es "f" en hexadecimal
+        String resultado = Calculadora.convertirADestino(15, 3);
+        assertEquals("f", resultado);
+    }
+
+    // Método: convertirADestino (Prueba 2: Decimal a Binario)
+    @Test
+    public void convertirADestino_DecimalABinario_RetornaStringCorrecto() {
+        // 2 en decimal es "10" en binario
+        String resultado = Calculadora.convertirADestino(2, 0);
+        assertEquals("10", resultado);
     }
 }
 
